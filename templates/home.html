@@ -3,7 +3,7 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>MS SPAM DETECTOR</title>
+        <title>Phishing Detector</title>
         <link rel="shortcut icon" href="{{ url_for('static', filename='spam-favicon.ico') }}">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
         <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
@@ -11,6 +11,10 @@
     </head>
 
     <body>
+
+        <header>
+            <a href="/url-detector" class="link">Phishing Url detector</a>
+        </header>
 
         <!-- Website Title -->
     	<div class="container">
@@ -23,7 +27,14 @@
         <!-- Text Area -->
     	<div class="ml-container">
     		<form action="{{ url_for('predict') }}" method="POST">
-        		<textarea class='message-box' name="message" rows="10" cols="100" placeholder="Enter Your Message Here... eg. Let's catch up tonight, You have a meeting scheduled for tomorrow, To join our premium memebership please enter code ALLYSON30 etc. "></textarea><br/>
+        		<textarea class='message-box' name="message" rows="10" cols="100" placeholder="Paste Email Message Here... eg. Dear Citizen.
+                Due to Covid-19 related issues, NY.GOV will pay $600 for victims who are affected by this
+                pandemic
+                Please complete the online form to join the aids program.
+                Please click here to activate your account. Please do not close out of the browser while
+                compicung he account achvalion
+                Thank you
+                New York State"></textarea><br/>
         		<input type="submit" class="my-cta-button" value="Identify Phishing Attempts">
         	</form>
     	</div>

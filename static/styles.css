@@ -191,3 +191,26 @@ p{
 	width: 35%;
     	margin: 10px 0;
 }
+
+
+header{
+	padding-top: 2rem;
+	display: flex;
+	align-items: end;
+	justify-content: end;
+  }
+  
+  .link{
+	text-decoration: none;
+	text-align: right;
+	color: #fff;
+	text-transform: capitalize;
+	font-family: 'Quicksand', sans-serif;
+   font-weight: bold;
+   font-size: 0.9rem;
+   margin-right: 4rem;
+  }
+  
+  .link:hover{
+	border-bottom: 1px solid #fff;
+  }
