@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Quicksand:wght@400;700&display=swap');
+
+html{
+	height: 100%;
+	margin: 0;
+}
+
+body{
+	font-family: Arial, Helvetica,sans-serif;
+	font-family: 'Poppins', sans-serif; 
+  text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	background: #000;
+	color: #fff;
+	line-height: 1.5;
+	
+	background: 
+    /* top, transparent red */ 
+    linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ),
+    /* bottom, image */
+    url('./bg2.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+p{
+	font-family: 'Poppins', sans-serif; 
+}
+
+/* Website Title */
+.container{
+    padding: 30px;
+	position: relative;
+	width: 85%;
+	margin: 0 auto;
+	/* background: linear-gradient(45deg, #d9ad3d, #d99d3d, #5ce0a3, #5cdce0, #5caee0, #5c8fe0, #765ce0, #d199a7);
+	background-size: 500% 500%;
+	animation: change-gradient 10s ease-in-out infinite;
+} */}
+@keyframes change-gradient {
+	0%{
+		background-position: 0 50%;
+	}
+	50%{
+		background-position: 100% 50%;
+	}
+	100%{
+		background-position: 0 50%;
+	}
+}
+
+.container-heading{
+    margin: 0;
+	margin: 1.5rem auto;
+	margin-top: 5rem;
+	text-transform: uppercase;
+	font-family: 'Quicksand', sans-serif;}
+
+.heading_font{
+    color: #ffffff;
+	font-size: 35px;
+	font-weight: normal;
+}
+
+.description p{
+	color: #ffffffaa;
+    font-size: 1.15rem;
+    margin: -5px 0 0;
+	font-weight: 300;
+	width: 85%;
+	margin: 0 auto;
+}
+
+/* Text Area */
+.ml-container{
+    margin: 30px 0;
+	flex: 1 0 auto;
+}
+
+.form-input {
+	text-align: center;
+	width: 350px;
+	height: 25px;
+	margin-bottom: 5px;
+}
+
+.message-box{
+	background: #ffffff20;
+	border: 1px solid #fff;
+	color: #fff;
+	padding: 1rem;
+	font-family: inherit;
+	width: 55%;
+	transition: 0.4s ease-in;
+	line-height: 1.5;
+
+}
+
+.message-box:focus, .message-box:focus-visible, .message-box:focus-within{
+	border: 2px solid #1e3bb3;
+	outline: none;
+}
+
+/* Predict Button */
+.my-cta-button{
+	background: linear-gradient(to top, #5540cd, #493fc7, #3c3ec0, #2e3dba, #1e3bb3);
+	margin-top: 1rem;
+    padding: 1rem 2rem;
+	border-radius: 2rem;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+	cursor: pointer;
+	outline: none;
+	font-family: inherit;
+	border: none;
+}
+
+.my-cta-button:hover{
+	background: #162e8f;
+}
+
+
+/* Contact */
+.contact-icon{
+	color: #ffffff;
+	padding: 7px;
+}
+
+.contact-icon:hover{
+	color: #8c8c8c;
+}
+
+/* Footer */
+.footer{
+	flex-shrink: 0;
+	position: relative;
+	padding: 20px;
+	background: linear-gradient(45deg, #d9ad3d, #d99d3d, #5ce0a3, #5cdce0, #5caee0, #5c8fe0, #765ce0, #d199a7);
+	background-size: 500% 500%;
+	animation: change-gradient 10s ease-in-out infinite;
+}
+
+.footer-description{
+	color: #ffffff;
+	margin: 0;
+	font-size: 12px;
+}
+
+/* Result */
+.results{
+    padding: 30px 0 0;
+	flex: 1 0 auto;
+}
+
+.results h1{
+	font-family: 'Quicksand', sans-serif;
+	margin-top: 4rem;
+}
+
+.results h2{
+	font-size: 1.3rem;
+	width: 80%;
+	margin: 1rem auto;
+	font-weight: 700;
+}
+
+.danger{
+    color: #ff0000;
+}
+
+.safe{
+    color: green;
+}
+
+.gif, .image{
+	width: 25%;
+	margin-top: 4rem;
+}
+
+.gif1{
+	width: 35%;
+    	margin: 10px 0;
+}

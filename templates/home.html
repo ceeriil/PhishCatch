@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>MS SPAM DETECTOR</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='spam-favicon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Website Title -->
+    	<div class="container">
+    		<h1 class='container-heading'><span>Secure Your Healthcare Organization from Phishing Attacks</h1>
+            <div class='description'>
+    			<p>Our advanced phishing detection app utilizes cutting-edge algorithms and machine learning techniques to identify and prevent phishing attacks targeting healthcare organizations. Safeguard patient data and maintain the integrity of your network.</p>
+    		</div>
+    	</div>
+
+        <!-- Text Area -->
+    	<div class="ml-container">
+    		<form action="{{ url_for('predict') }}" method="POST">
+        		<textarea class='message-box' name="message" rows="10" cols="100" placeholder="Enter Your Message Here... eg. Let's catch up tonight, You have a meeting scheduled for tomorrow, To join our premium memebership please enter code ALLYSON30 etc. "></textarea><br/>
+        		<input type="submit" class="my-cta-button" value="Identify Phishing Attempts">
+        	</form>
+    	</div>
+
+        <!-- Footer -->
+      <!--  <div class='footer'>
+          
+       </div> -->
+
+    </body>
+</html>
