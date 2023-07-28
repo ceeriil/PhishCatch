@@ -1,24 +1,28 @@
-from flask import Flask, Response, render_template, request, send_from_directory, jsonify, abort
-from helper import get_phishing_result, get_stats, update_stats, capture_screenshot, screenshot_dir
-from werkzeug.utils import secure_filename
-from datetime import date
-import time
-import json
-import os
-
+from flask import Flask
+from url_detector import *
+from content_detector import *
 
 app = Flask(__name__)
-app.secret_key = os.urandom(12).hex()
 
-default_screenshot_width = 1920
-default_screenshot_height = 1080
-
-
+# Routes from app.py
 @app.route('/')
 def home():
+	return render_template('home.html')
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    if request.method == 'POST':
+        message = request.form['message']
+        data = [message]
+        vect = cv.transform(data).toarray()
+        my_prediction = classifier.predict(vect)
+        return render_template('result.html', prediction=my_prediction)
+    
+# Routes from main.py
+@app.route('/url-detector')
+def url():
     update_stats('visits')
     return render_template("index.html")
-
 
 @app.route('/check', methods=['GET', 'POST'])
 def check():
@@ -32,7 +36,6 @@ def check():
 
 @app.route("/listen")
 def listen():
-
     def respond_to_client():
         while True:
             stats = get_stats()
@@ -40,9 +43,8 @@ def listen():
                 {"visits": stats['visits'], "checked": stats['checked'], "phished": stats['phished']})
             yield f"id: 1\ndata: {_data}\nevent: stats\n\n"
             time.sleep(0.5)
-
+    
     return Response(respond_to_client(), mimetype='text/event-stream')
-
 
 @app.route("/screenshot")
 def screenshot():
@@ -66,6 +68,7 @@ def screenshot():
 
         return capture_screenshot(target_url=target_url, filename=ss_file_name, size=(width, height))
     abort(404)
+
 
 
 if __name__ == '__main__':

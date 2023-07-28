@@ -1,60 +1,66 @@
-# ML-Spam-Detection-Deployment
+# PhishCatch 🎣🚫 - Phishing Detection App (Final year Project)
 
-![Kaggle](https://img.shields.io/badge/Dataset-Kaggle-blue.svg) ![Python 3.6](https://img.shields.io/badge/Python-3.6-brightgreen.svg) ![Scikit-Learn](https://img.shields.io/badge/Libraries-ScikitLearn-orange.svg)![NLTK](https://img.shields.io/badge/NLTK-coral.svg)
+## Table of Contents 📚
 
-This repository consists of files required for end to end implementation and deployment of Machine Learning Spam Detection web application created with flask and deployed on the Heroku platform.
+- [App Link 🌐](#app-link-)
+- [About the App ℹ️](#about-the-app-)
+- [Screenshots 📸](#screenshots-)
+- [Deployment on Heroku 🚀](#deployment-on-heroku-)
+- [Technologies Used 🛠️](#technologies-used-)
+- [Bug / Feature Request 🐞🔧](#bug---feature-request-)
+- [Acknowledgements 🙏](#acknowledgements-)
 
-## Table of Contents
-  * [App Link](#app-link)
-  * [About the App](#about-the-app)
-  * [Deployement on Heroku](#deployement-on-heroku)
-  * [Technologies Used](#technologies-used)
-  * [Bug / Feature Request](#bug---feature-request)
+## App Link 🌐
 
+To experience the power of PhishCatch, click on the link below: 👇<br />
+[https://ceeriil.com/](https://ceeriil.com/)
 
-## App Link
-If you want to view the deployed model, click on the following link:<br />
-[https://allysonspamdetector.herokuapp.com/](https://allysonspamdetector.herokuapp.com/)
+## About the App ℹ️
 
-A glimpse of the web app:
+PhishCatch is an advanced Phishing Detection App developed as part of my final year project at the university. It is designed to protect users from phishing attempts by analyzing messages and URLs for potential threats. The app leverages machine learning techniques, including natural language processing and pattern recognition, to identify suspicious content and URLs.
 
-![GIF](readme_resources/spam-sms-web-app.gif)
-![GIF](readme_resources/not-spam-sms-web-app.gif)
+With an emphasis on precision, PhishCatch employs Multinomial Naive Bayes and Bernoulli Naive Bayes classifiers to minimize false positives and ensure accurate detection. The app is built with Python 3.6.10 and utilizes popular libraries such as Scikit-Learn and NLTK for efficient analysis and prediction.
 
-• If you encounter this webapp as shown in the picture given below, it is occuring just because **free dynos for this particular month provided by the Heroku platform have been completely used.** You can access the webpage on 1st of the next month.
+## Screenshots 📸
 
-• Sorry for the inconvenience.
+### Phishing Content Input 📝
 
-![Heroku-Error](readme_resources/application-error-heroku.png)
+![Phishing Content Input](https://imgur.com/T8YC1pJ.png)
 
-## About the App
-The ML Spam Detection is a Flask web application which predicts whether the message is a spam or not. SMS Spam Collection dataset from Kaggle was used to classify the messages into 2 classes- Ham(1) and Spam(0) using stemming, Bag of Words model and Naive Bayes Classifiers.
+### Safe Message ✉️
 
-Note:The dataset is an unbalanced dataset and therefore, for this situation the role of Precision becomes quite important.Precision is more focused in the positive class than in the negative class, it actually measures the probability of correct detection of positive values,
+![Safe Message](https://imgur.com/aZicOU7.png)
 
-Consider the following case scenario -'suppose if the message is not a spam and if it's been predicted by the model as a spam, the consumer is going to miss that message.' So, for this type of unbalanced dataset, precision defined as {TP/(TP+FP)} plays an important role along with accuracy_score. My objective was to reduce the FP(False Positive) value as much as possible for this case and in order to overcome this issue, Naive Bayes classifiers namely, MultinomiallNB and BernoulliNB were implemented to get best accuracy_score and precision_score from the dataset.
+### Not Safe ⚠️
 
-The code is written in Python 3.6.10. If you don't have Python installed, you can find it [here](https://www.python.org/downloads/). If you are using a lower version of Python you can upgrade using the pip package, ensuring you have the latest version of pip. To install the required packages and libraries, run this command in the project directory after [cloning](https://www.howtogeek.com/451360/how-to-clone-a-github-repository/) the repository:
-```bash
-pip install -r requirements.txt
-```
+![Not Safe](https://imgur.com/ocPZQvY.png)
 
-## Deployement on Heroku
-Login or signup in order to create virtual app. You can either connect your github profile or download ctl to manually to deploy this project.
+### Phishing URL Content 🌐
 
-[![](https://i.imgur.com/dKmlpqX.png)](https://heroku.com)
+![Phishing URL Content](https://imgur.com/saCOXuK.png)
 
-The next step would be to follow the instruction given in the [Heroku Documentation](https://devcenter.heroku.com/articles/getting-started-with-python) to deploy a web app.
+### Result of URL Detection ✔️
 
-## Technologies Used
+![Result of URL Detection](https://imgur.com/CJuXn56.png)
 
-![](https://forthebadge.com/images/badges/made-with-python.svg)
+## Deployment on Heroku 🚀
 
-[<img target="_blank" src="https://flask.palletsprojects.com/en/1.1.x/_images/flask-logo.png" width=170>](https://flask.palletsprojects.com/en/1.1.x/) [<img target="_blank" src="https://number1.co.za/wp-content/uploads/2017/10/gunicorn_logo-300x85.png" width=280>](https://gunicorn.org) [<img target="_blank" src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png" width=200>](https://scikit-learn.org/stable/) 
+PhishCatch is deployed on Heroku. To access the deployed version, visit [https://phishcatch.heroku.app/](https://ceeriil.com/)
 
-## Bug / Feature Request
+## Technologies Used 🛠️
 
-If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an [issue](https://github.com/divyansh1195/ML-Spam-Detection/issues) here by including your search query and the expected result
+![Made with Python](https://img.shields.io/badge/Made_with-Python-3776AB?style=for-the-badge&logo=python)
+![Flask](https://img.shields.io/badge/Flask-1.1.x-000?style=for-the-badge&logo=flask)
+![Gunicorn](https://img.shields.io/badge/Gunicorn-Latest-68B585?style=for-the-badge&logo=gunicorn)
+![Scikit-Learn](https://img.shields.io/badge/Scikit_Learn-Latest-F7931E?style=for-the-badge&logo=scikit-learn)
+![NLTK](https://img.shields.io/badge/NLTK-Latest-FF8C00?style=for-the-badge&logo=nltk)
 
+## Bug / Feature Request 🐞🔧
 
-## Please do ⭐ the repository, if it helped you in anyway.
+If you encounter any issues or have suggestions for improving PhishCatch, please open an [issue](https://github.com/ceeriil/Phishcatch/issues). Your feedback is invaluable to us!
+
+## Acknowledgements 🙏
+
+I extend my heartfelt gratitude to the open-source community and all contributors who inspired and supported the development of PhishCatch.
+
+## Please ⭐ the repository if you find PhishCatch helpful in safeguarding against phishing attacks. Together, let's create a safer digital world! 🛡️
